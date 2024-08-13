@@ -2,12 +2,13 @@
 <body>
 <nav>
   <% if (user) { %>
-    <h1>Welcome, <%= user.username %>!</h1>
-    <a href="/users">Users</a>
-    <a href="/auth/sign-out">Sign out</a>
+    <a href="/workouts">💪🏽</a>
+    <a href="/users"></a>🦊
+    <a href="/auth/sign-out">👋</a>
   <% } else { %>
-    <h1>Please sign in!</h1>
-    <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Sign in</a>
+    <a href="/workouts">💪🏽</a>
+    <a href="/users">🦊</a>
+    <a href="/auth/sign-up">🪧⬆️</a>
+    <a href="/auth/sign-in">🪵🏨</a>
   <% } %>
 </nav>
