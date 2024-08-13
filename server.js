@@ -15,6 +15,9 @@ import './config/database.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as workoutsRouter } from './routes/workouts.js'
+import { router as exercisesRouter } from './routes/exercises.js'
+
 
 // create the express app
 const app = express()
@@ -48,6 +51,8 @@ app.use(passUserToView)
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
+app.use('/workouts', workoutsRouter)
+app.use('/exercises', exercisesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
