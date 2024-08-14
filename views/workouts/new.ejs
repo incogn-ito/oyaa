@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/workouts/new.css" />
 <%- include('../partials/nav') %>
 
+<main>
 <h1><%= title  %></h1>
-
 <table id="list">
 <% if (user) { %>
   <form 
@@ -25,7 +25,8 @@
       <br>
       <button type="submit">Oyaa!</button>
     </form>
-  </table>
 <% } %>
+</table>
+</main>
 
 <%- include("../partials/footer") %>
