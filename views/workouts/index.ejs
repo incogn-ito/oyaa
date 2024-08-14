@@ -4,32 +4,43 @@
 <main>
     <h1>Workout List</h1>
     <table id="list">
-      <thead>
-        <tr>
-          <th> Exercises </th>
-          <th> Calories Burned </th>
-          <th> Details </th>
-          <th> Delete </th>
-        </tr>
-      </thead>
       <% if (user) { %>
         <h2>Add Workout</h2>
-        <form action="/workouts" method="POST">
+        <form 
+        action="/workouts" method="POST">
+            <label for="exercises-input">Exercises: </label>
+            <br>
+            <select name="exerciseId">
+                <% exercises.forEach(function(exercise) { %>
+                  <option value="<%= exercise._id %>"><%= exercise.name %></option>
+                <% }) %>
+              </select>
+              <br>
             <label for="calories-burned-input">Calories Burned: </label>
             <input type="text" name="caloriesBurned" id="calories-burned-input">
             <label for="duration">Duration: </label>
             <input type="number" name="duration" id="duration-input">
             <label for="start-date-input">Workout Date: </label>
-            <input type="number" name="startDate" placeholder="MM/DD/YY" id="start-date-input">
+            <input type="datetime-local" name="startDate" id="start-date-input">
+            <br>
             <button type="submit">Oyaa!</button>
           </form>
       <% } %>
+      <br>
+      <thead>
+        <tr>
+          <th> Exercises </th>
+          <th> Workout Date </th>
+          <th> Details </th>
+          <th> Delete </th>
+        </tr>
+      </thead>
       <tbody>
         <% workouts.forEach((workout) => { %>
             <tr>
-              <td><%= workout.exercise %></td>
-              <td><%= workout.caloriesBurned %></td>
-              <td><a href="/workouts/<%= workout._id %>/index>"></a></td>
+              <td><%= workout.exercise.name %></td>
+              <td><%= workout.startDate %></td>
+              <td><a href="/workouts/<%= workout._id %>/index>">DETAILS</a></td>
               <td>
                 <form 
                   action="/workouts/<%= workout._id %>?_method=DELETE" method="POST"
