@@ -5,7 +5,9 @@ const Schema = mongoose.Schema
 const exerciseSchema = new Schema ({
     name: { 
         type: String, 
-        required: true },
+        required: true 
+      },
+    caloriesBurned: Number,
     }, {
       timestamps: true
     })
