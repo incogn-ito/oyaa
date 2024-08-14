@@ -3,6 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <table>
 	<h1><%= title %></h1>
   <p>Please first ensure that the exercise is not in the dropdown
     <select>
@@ -11,13 +12,13 @@
       <% }) %>
     </select>
   </p>
-  <form id="add-exercise-form" action="/exercises" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" name="name" id="name-input">
     <label for="calories-burned-input">Calories Burned:</label>
     <input type="number" name="caloriesBurned" id="calories-burned-input">
     <button type="submit">Add Exercise</button>
   </form>
+</table>
 </main>
 
 <%- include('../partials/footer') %>
