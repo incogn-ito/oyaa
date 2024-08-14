@@ -3,30 +3,9 @@
 
 <main>
     <h1>Workout List</h1>
+    <h2><a href= "/workouts/new"><button>Add Workout</button></a></h2>
+    
     <table id="list">
-      <% if (user) { %>
-        <h2>Add Workout</h2>
-        <form 
-        action="/workouts" method="POST">
-            <label for="exercises-input">Exercises: </label>
-            <br>
-            <select name="exerciseId">
-                <% exercises.forEach(function(exercise) { %>
-                  <option value="<%= exercise._id %>"><%= exercise.name %></option>
-                <% }) %>
-              </select>
-              <br>
-            <!-- <label for="calories-burned-input">Calories Burned: </label>
-            <input type="text" name="caloriesBurned" id="calories-burned-input"> -->
-            <label for="duration">Duration: </label>
-            <input type="number" name="duration" id="duration-input">
-            <label for="start-date-input">Workout Date: </label>
-            <input type="datetime-local" name="startDate" id="start-date-input">
-            <br>
-            <button type="submit">Oyaa!</button>
-          </form>
-      <% } %>
-      <br>
       <thead>
         <tr>
           <th> Exercises </th>
