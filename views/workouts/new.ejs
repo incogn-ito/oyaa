@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/workouts/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+    <h1><%= title %></h1>
+    <form id="new-form" action="/workouts/new" method="POST">
+      <label for="calories-burned-input">Calories Burned: </label>
+      <input type="text" name="caloriesBurned" id="calories-burned-input">
+      <label for="duration">Duration: </label>
+      <input type="number" name="duration" id="duration-input">
+      <label for="start-date-input">Workout Date: </label>
+      <input type="number" name="startDate" placeholder="MM/DD/YY" id="start-date-input">
+      <button type="submit">Add Workout</button>
+    </form>
+  </main>
+
+<%- include("../partials/footer") %>

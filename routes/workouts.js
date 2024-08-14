@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', workoutsCtrl.index)
 
 // protected routes
-// router.post('/', isSignedIn, workoutsCtrl.create)
+router.post('/', isSignedIn, workoutsCtrl.create)
 
 export { router }
 

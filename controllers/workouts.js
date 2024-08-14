@@ -13,8 +13,18 @@ async function index(req, res) {
     }
 }
 
+async function create(req, res) {
+    try {
+        req.body.owner = req.session.user._id
+        await Workout.create(req.body) 
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+}
 
 
 export {
     index,
+    create,
 }

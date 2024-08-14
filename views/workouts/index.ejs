@@ -12,6 +12,18 @@
           <th> Delete </th>
         </tr>
       </thead>
+      <% if (user) { %>
+        <h2>Add Workout</h2>
+        <form action="/workouts" method="POST">
+            <label for="calories-burned-input">Calories Burned: </label>
+            <input type="text" name="caloriesBurned" id="calories-burned-input">
+            <label for="duration">Duration: </label>
+            <input type="number" name="duration" id="duration-input">
+            <label for="start-date-input">Workout Date: </label>
+            <input type="number" name="startDate" placeholder="MM/DD/YY" id="start-date-input">
+            <button type="submit">Oyaa!</button>
+          </form>
+      <% } %>
       <tbody>
         <% workouts.forEach((workout) => { %>
             <tr>
