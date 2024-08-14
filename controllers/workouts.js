@@ -31,7 +31,21 @@ async function create(req, res) {
     }
 }
 
+async function newWorkout(req, res) {
+    try {
+        const exercises = await Exercise.find({})
+        res.render('workouts/new', {
+        title: 'Add Workout',
+        exercises
+        })
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+}
+
 export {
     index,
     create,
+    newWorkout as new,
 }
