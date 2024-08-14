@@ -24,7 +24,8 @@ async function create(req, res) {
         req.body.exercise = exercise
         console.log(exercise)
         req.body.owner = req.session.user._id
-        await Workout.create(req.body) 
+        await Workout.create(req.body)
+        res.redirect('/workouts') 
     } catch (error) {
         console.log(error)
         res.redirect('/')
