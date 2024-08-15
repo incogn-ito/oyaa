@@ -12,6 +12,8 @@ router.get('/', isSignedIn, workoutsCtrl.index)
 
 router.get('/new', isSignedIn, workoutsCtrl.new)
 
+router.get('/:workoutId', isSignedIn, workoutsCtrl.show)
+
 router.post('/', isSignedIn, workoutsCtrl.create)
 
 export { router }

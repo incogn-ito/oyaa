@@ -5,33 +5,44 @@
 <main>
     <h1><%= title %></h1>
     <form 
-    id="new-form" 
-    action="/flights/<%= flight._id %>?_method=PUT" 
-    method="POST"
-    >
-        <label for="airline-select">Airline:</label>
-        <select name="airline" id="airline-select">
-          <option value="<%= flight.airline %>"><%= flight.airline %></option>
-          <option value="American">American</option>
-          <option value="Southwest">Southwest</option>
-          <option value="United">United</option>
-        </select>
-        <label for="airport-select">Airport:</label>
-        <select name="airport" id="airport-select">
-        <option value="<%= flight.airport %>"><%= flight.airport %></option>
-          <option value="AUS">AUS</option>
-          <option value="DFW">DFW</option>
-          <option value="DEN">DEN</option>
-          <option value="LAX">LAX</option>
-          <option value="SAN">SAN</option>
-        </select>
-        <label for="flightNo-input">Flight No:</label>
-        <input type="number" value="<%= flight.flightNo %>" name="flightNo" id="flightNo-input">
-        <label for="departs-input">Departs:</label>
-        <input type="string" value="<%= flight.departs %>" name="departs" id="departs-input"
-        >
-        <button type="submit">Save Flight</button>
-      </form>
+    id="new-form" action="/workouts/<%= workout._id %>?_method=PUT" 
+    method="POST">
+    <table id="list">
+      <% if (user) { %>
+        <form action="/workouts" method="POST">
+            <label for="exercises-input">Exercises: </label>
+            <br>
+            <select name="exerciseId">
+                <% exercises.forEach(function(exercise) { %>
+                  <option value="<%= exercise._id %>"><%= exercise.name %></option>
+                <% }) %>
+              </select>
+              <br>
+            <!-- <label for="calories-burned-input">Calories Burned: </label>
+            <input type="text" name="caloriesBurned" id="calories-burned-input"> -->
+            <label for="duration">Duration: </label>
+            <input type="number" name="duration" placeholder="Minutes" id="duration-input">
+            <label for="start-date-input">Workout Date: </label>
+            <input type="datetime-local" name="startDate" id="start-date-input">
+            <label for="content-textarea">Comments:</label>
+            <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
+            <label for="weather-select">Weather:</label>
+            <select name="weather" id="weather-select">
+                <option value="Sunny">Sunny</option>
+                <option value="Partly Cloudy">Partly Cloudy</option>
+                <option value="Overcast">Overcast</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Snowy">Snowy</option>
+                <option value="Windy">Windy</option>
+            </select>
+            <label for="temperature-input">Temperature (°F):</label>
+            <input type= "number" name="temperature" id="temperature-input"></input>  
+            <br>
+            <button type="submit">Save Workout!</button>
+          </form>
+      <% } %>
+      </table>
+    </form>
     </main>
 
 

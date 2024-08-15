@@ -45,8 +45,14 @@ async function newWorkout(req, res) {
     }
 }
 
+async function show(req, res) {
+    
+}
+
 export {
     index,
     create,
     newWorkout as new,
+    show,
+    
 }
