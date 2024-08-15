@@ -6,7 +6,6 @@
   <section>
     <table>
     <h1><%= title  %></h1>
-    <section>
       <a href="/workouts/<%= workout._id %>/edit">
         <button class="btn" >Edit Workout</button>
       </a>
@@ -44,7 +43,7 @@
             <option value="Custom">Custom</option>
           </select>
           <label for="meal-content-textarea">Meal Log:</label><br>
-          <textarea name="mealContent" id="meal-content-textarea">
+          <textarea name="mealContent" id="meal-content-textarea"></textarea>
             <label for="rating-select">Rating:</label>
             <select name="rating" id="rating-select">
               <option value="1">1</option>
@@ -53,7 +52,7 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            <button type="submit">Add Meal Plan</button>
+            <button type="submit">Add Meal</button>
         </form><br>
         <% if (workout.meals.length) { %>
           <table>
