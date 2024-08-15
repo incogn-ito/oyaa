@@ -44,13 +44,14 @@
           </select>
           <label for="meal-content-textarea">Meal Log:</label><br>
           <textarea name="mealContent" id="meal-content-textarea"></textarea>
-            <label for="rating-select">Rating:</label>
-            <select name="rating" id="rating-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+            <label for="meal-type-select">Type:</label>
+            <select name="mealType" id="meal-type-select">
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Snack">Snack</option>
+              <option value="Drink">Drink</option>
             </select>
             <button type="submit">Add Meal</button>
         </form><br>
@@ -60,7 +61,7 @@
               <tr>
                 <th>Meal Plan</th>
                 <th>Meal Log</th>
-                <th>Rating</th>
+                <th> Type</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -69,7 +70,7 @@
                 <tr>
                   <td><%= meal.mealPlan %></td>
                   <td>$<%= meal.mealContent %></td>
-                  <td>$<%= meal.rating %></td>
+                  <td>$<%= meal.mealType %></td>
                   <td>
                     <form method="POST" action="/workouts/<%= workout._id %>/meals/<%= meal._id %>?_method=DELETE">
                       <button>❌</button>

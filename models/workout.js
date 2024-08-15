@@ -8,12 +8,10 @@ const mealTrackerSchema = new Schema ({
       enum: ['Intermittent Fasting', 'One Meal A Day', 'Carnivore', 'Paleo', 'Keto', 'Custom']
     },
     mealContent: String,
-    rating: {
-      type: Number, 
-      min: 1, 
-      max: 5, 
-      default: 5
-    }
+    mealType: {
+      type: String, 
+      enum: ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Snack', 'Drinks']
+    },
 }, {
       timestamps: true
   })
