@@ -3,10 +3,6 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const mealTrackerSchema = new Schema ({
-    mealPlan: {
-      type: String,
-      enum: ['Intermittent Fasting', 'One Meal A Day', 'Carnivore', 'Paleo', 'Keto', 'Custom']
-    },
     mealContent: String,
     mealType: {
       type: String, 
@@ -23,7 +19,8 @@ const workoutSchema = new Schema({
     startDate: {
         type: Date,
         default: Date.now,
-        get: (date)=> date.toLocaleString()
+        get: (date)=> date.toLocaleString(),
+        required: true
     },
     meals: [mealTrackerSchema],
     owner: {

@@ -24,6 +24,7 @@ async function create(req, res) {
         req.body.exercise = exercise
         console.log(exercise)
         req.body.owner = req.session.user._id
+
         await Workout.create(req.body)
         res.redirect('/workouts') 
     } catch (error) {
@@ -53,7 +54,7 @@ async function show(req, res) {
     })
 }
 
-async function createMealLog(req, res) {
+async function createMeal(req, res) {
     try {
       let workout = await Workout.findById(req.params.workoutId)
       workout.meals.push(req.body)
@@ -102,14 +103,25 @@ async function createMealLog(req, res) {
     }
   }
 
+  async function update(req, res) {
+    try {
+    console.log(req.body)
+      const workout = await Workout.findByIdAndUpdate(req.params.workoutId, req.body, {new: true})
+      res.redirect(`/workouts/${workout._id}`)
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
 export {
     index,
     create,
     newWorkout as new,
     show,
-    createMealLog,
+    createMeal,
     deleteMeal,
     deleteWorkout,
-    edit
-    
+    edit,
+    update
 }

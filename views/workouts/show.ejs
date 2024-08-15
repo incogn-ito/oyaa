@@ -33,18 +33,18 @@
         <!-- </form> -->
         <h2>Meal Tracker:</h2>
         <form id="new-form" method="POST" action="/workouts/<%= workout._id %>/meals">
-          <label for="meal-plan-select">Meal Plan:</label>
-          <select name="mealPlan" id="meal-plan-select">
+          <!-- <h3><label for="meal-plan-select">Meal Plan:</label></h3>
+          <p><select name="mealPlan" id="meal-plan-select">
             <option value="Intermittent Fasting">Intermittent Fasting</option>
             <option value="One Meal A Day">One Meal A Day</option>
             <option value="Carnivore">Carnivore</option>
             <option value="Paleo">Paleo</option>
             <option value="Keto">Keto</option>
             <option value="Custom">Custom</option>
-          </select>
-          <label for="meal-content-textarea">Meal Log:</label><br>
+          </select></p> -->
+          <h3><label for="meal-content-textarea">Food:</label></h3>
           <textarea name="mealContent" id="meal-content-textarea"></textarea>
-            <label for="meal-type-select">Type:</label>
+            <p><label for="meal-type-select">Type:</label></p>
             <select name="mealType" id="meal-type-select">
               <option value="Breakfast">Breakfast</option>
               <option value="Lunch">Lunch</option>
@@ -52,25 +52,23 @@
               <option value="Dessert">Dessert</option>
               <option value="Snack">Snack</option>
               <option value="Drink">Drink</option>
-            </select>
-            <button type="submit">Add Meal</button>
-        </form><br>
+            </select></p>
+            <button type="submit">Log Meal</button>
+        </form>
         <% if (workout.meals.length) { %>
           <table>
             <thead>
               <tr>
-                <th>Meal Plan</th>
-                <th>Meal Log</th>
-                <th> Type</th>
+                <th>Food</th>
+                <th>Category</th>
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody>
+          <tbody>
               <% workout.meals.forEach(meal => { %>
-                <tr>
-                  <td><%= meal.mealPlan %></td>
-                  <td>$<%= meal.mealContent %></td>
-                  <td>$<%= meal.mealType %></td>
+                <p><tr>
+                  <td><%= meal.mealContent %></td>
+                  <td><%= meal.mealType %></td>
                   <td>
                     <form method="POST" action="/workouts/<%= workout._id %>/meals/<%= meal._id %>?_method=DELETE">
                       <button>❌</button>
@@ -80,9 +78,8 @@
               <% }) %>
             </tbody>
           </table>
-           </section>
         <% } else { %>
-          <h3>There are no meals logged to this workout on <%= workout.startDate %></h3>
+          <h3>There are no meals logged to this workout<h3>
         <% } %>
 </main>
     

@@ -5,7 +5,7 @@
 <main>
 <table id="list">
 <% if (user) { %>
-  <form action="/workouts" method="POST">
+  <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
       <label for="exercises-input">Exercises: </label>
       <br>
       <select name="exerciseId">
