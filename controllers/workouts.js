@@ -65,6 +65,16 @@ async function createMealLog(req, res) {
     }
   }
 
+  async function deleteWorkout(req, res) {
+    try {
+      let workout = await Workout.findByIdAndDelete(req.params.workoutId)
+      res.redirect(`/workouts`)
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
   async function deleteMeal(req, res) {
     try {
       let workout = await Workout.findById(req.params.workoutId)
@@ -84,5 +94,6 @@ export {
     show,
     createMealLog,
     deleteMeal,
+    deleteWorkout,
     
 }
