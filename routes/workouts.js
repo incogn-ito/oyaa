@@ -20,7 +20,7 @@ router.post('/:workoutId/meals', isSignedIn, workoutsCtrl.createMealLog)
 
 // router.delete('/:workoutId', isSignedIn, workoutsCtrl.delete)
 
-// router.delete('/:workoutId/meals/:mealId', isSignedIn, workoutsCtrl.deleteMealLog)
+router.delete('/:workoutId/meals/:mealId', isSignedIn, workoutsCtrl.deleteMeal)
 
 export { router }
 

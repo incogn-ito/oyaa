@@ -47,7 +47,6 @@ async function newWorkout(req, res) {
 
 async function show(req, res) {
     const workout = await Workout.findById(req.params.workoutId).populate('exercise')
-    console.log(exercise)
     res.render('workouts/show', {
         title: 'Workout Details',
         workout
@@ -66,11 +65,24 @@ async function createMealLog(req, res) {
     }
   }
 
+  async function deleteMeal(req, res) {
+    try {
+      let workout = await Workout.findById(req.params.workoutId)
+      workout.meals.remove({_id: req.params.mealId})
+      await workout.save()
+      res.redirect(`/workouts/${workout._id}`)
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
 export {
     index,
     create,
     newWorkout as new,
     show,
     createMealLog,
+    deleteMeal,
     
 }
