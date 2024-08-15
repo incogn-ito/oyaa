@@ -10,13 +10,13 @@
         <button class="btn" >Edit Workout</button>
       </a>
     <% if (user) { %>
-      <div>Exercise:</div>
+      <h3><div>Exercise:</div></h3>
       <div><%= workout.exercise.name %></div>
       <div>Workout Date:</div>
       <div><%= workout.startDate %></div>
       <div>Duration:</div>
-      <div><%= workout.duration %></div>
-      
+      <div><%= workout.duration %> Minutes</div>
+
       <div>Comments:</div>
       <div><%= workout.Comments %></div>
           <h2><label for="content-textarea">Comments:</label></h2>
