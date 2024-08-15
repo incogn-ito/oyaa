@@ -56,10 +56,23 @@ async function show(req, res) {
     })
 }
 
+async function createMealLog(req, res) {
+    try {
+      let workout = await Workout.findById(req.params.workoutId)
+      workout.meals.push(req.body)
+      await workout.save()
+      res.redirect(`/workout/${workout._id}`)
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
 export {
     index,
     create,
     newWorkout as new,
     show,
+    createMealLog,
     
 }

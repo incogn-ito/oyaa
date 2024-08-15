@@ -2,14 +2,19 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const commentSchema = new Schema ({
-    content: String,
-    weather: {
+const mealTrackerSchema = new Schema ({
+    mealPlan: {
       type: String,
-      enum: ['Sunny', 'Partly Cloudy', 'Overcast', 'Rainy', 'Snowy', 'Windy']
+      enum: ['Intermittent Fasting', 'One Meal A Day', 'Carnivore', 'Paleo', 'Keto', 'Custom']
     },
-    temperature: Number,
-   }, {
+    mealContent: String,
+    rating: {
+      type: Number, 
+      min: 1, 
+      max: 5, 
+      default: 5
+    }
+}, {
       timestamps: true
   })
 
@@ -22,7 +27,7 @@ const workoutSchema = new Schema({
         default: Date.now,
         get: (date)=> date.toLocaleString()
     },
-    comments: [commentSchema],
+    meals: [mealTrackerSchema],
     owner: {
         type: Schema.Types.ObjectId, 
         ref: "User"

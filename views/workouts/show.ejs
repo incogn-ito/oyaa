@@ -4,22 +4,21 @@
 
 <main>
   <section>
+    <table>
     <h1><%= title  %></h1>
     <section>
       <a href="/workouts/<%= workout._id %>/edit">
         <button class="btn" >Edit Workout</button>
       </a>
     <% if (user) { %>
-      <h3><div>Exercise:</div></h3>
-      <div><%= workout.exercise.name %></div>
-      <div>Workout Date:</div>
-      <div><%= workout.startDate %></div>
-      <div>Duration:</div>
-      <div><%= workout.duration %> Minutes</div>
-
-      <div>Comments:</div>
-      <div><%= workout.Comments %></div>
-          <h2><label for="content-textarea">Comments:</label></h2>
+      <h2><div>Exercise:</div></h2>
+      <p><%= workout.exercise.name %></p>
+      <h3><div>Duration:</div></h3>
+      <p><%= workout.duration %> Minutes</p>
+      <h3><div>Workout Date:</div></h3>
+      <p><%= workout.startDate %></p>
+      <% } %>
+          <!-- <h2><label for="content-textarea">Comments:</label></h2>
           <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
           <label for="weather-select">Weather:</label>
           <select name="weather" id="weather-select">
@@ -31,11 +30,60 @@
               <option value="Windy">Windy</option>
           </select>
           <label for="temperature-input">Temperature (°F):</label>
-          <input type= "number" name="temperature" id="temperature-input"></input>  
+          <input type= "number" name="temperature" id="temperature-input"></input>   -->
         <!-- </form> -->
-    <% } %>
-    </table>
-  </section>
+        <h2>Meal Tracker:</h2>
+        <form id="new-form" method="POST" action="/workouts/<%= workout._id %>/meals">
+          <label for="meal-plan-select">Meal Plan:</label>
+          <select name="mealPlan" id="meal-plan-select">
+            <option value="Intermittent Fasting">Intermittent Fasting</option>
+            <option value="One Meal A Day">One Meal A Day</option>
+            <option value="Carnivore">Carnivore</option>
+            <option value="Paleo">Paleo</option>
+            <option value="Keto">Keto</option>
+            <option value="Custom">Custom</option>
+          </select>
+          <label for="meal-content-textarea">Meal Log:</label><br>
+          <textarea name="mealContent" id="meal-content-textarea">
+            <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <button type="submit">Add Meal Plan</button>
+        </form><br>
+        <% if (workout.meals.length) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Meal Plan</th>
+                <th>Meal Log</th>
+                <th>Rating</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% workouts.meals.forEach(meal => { %>
+                <tr>
+                  <td><%= workout.mealPlan %></td>
+                  <td>$<%= workout.mealContent %></td>
+                  <td>$<%= workout.rating %></td>
+                  <td>
+                    <form method="POST" action="/workouts/<%= workout._id %>/meals/<%= meal._id %>?_method=DELETE">
+                      <button>❌</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+           </section>
+        <% } else { %>
+          <h3>There are no meals logged to this workout on <%= workout.startDate %></h3>
+        <% } %>
 </main>
     
     <%- include("../partials/footer") %>
