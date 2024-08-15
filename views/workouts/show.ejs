@@ -65,11 +65,11 @@
               </tr>
             </thead>
             <tbody>
-              <% workouts.meals.forEach(meal => { %>
+              <% workout.meals.forEach(meal => { %>
                 <tr>
-                  <td><%= workout.mealPlan %></td>
-                  <td>$<%= workout.mealContent %></td>
-                  <td>$<%= workout.rating %></td>
+                  <td><%= meal.mealPlan %></td>
+                  <td>$<%= meal.mealContent %></td>
+                  <td>$<%= meal.rating %></td>
                   <td>
                     <form method="POST" action="/workouts/<%= workout._id %>/meals/<%= meal._id %>?_method=DELETE">
                       <button>❌</button>

@@ -46,12 +46,10 @@ async function newWorkout(req, res) {
 }
 
 async function show(req, res) {
-    const exercise = await Exercise.findById(req.body.exerciseId)
-    const workout = await Workout.findById(req.params.workoutId)
+    const workout = await Workout.findById(req.params.workoutId).populate('exercise')
     console.log(exercise)
     res.render('workouts/show', {
         title: 'Workout Details',
-        exercise,
         workout
     })
 }
@@ -61,7 +59,7 @@ async function createMealLog(req, res) {
       let workout = await Workout.findById(req.params.workoutId)
       workout.meals.push(req.body)
       await workout.save()
-      res.redirect(`/workout/${workout._id}`)
+      res.redirect(`/workouts/${workout._id}`)
     } catch (error) {
       console.log(error)
       res.redirect('/workouts')
