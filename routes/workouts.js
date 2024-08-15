@@ -16,6 +16,8 @@ router.get('/:workoutId', isSignedIn, workoutsCtrl.show)
 
 router.post('/', isSignedIn, workoutsCtrl.create)
 
+router.get('/:workoutId/edit', workoutsCtrl.edit)
+
 router.post('/:workoutId/meals', isSignedIn, workoutsCtrl.createMealLog)
 
 router.delete('/:workoutId', isSignedIn, workoutsCtrl.deleteWorkout)

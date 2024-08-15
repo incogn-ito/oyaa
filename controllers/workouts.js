@@ -87,6 +87,21 @@ async function createMealLog(req, res) {
     }
   }
 
+  async function edit(req, res) {
+    try {
+      const workout = await Workout.findById(req.params.workoutId)
+      const exercises = await Exercise.find({})    
+      res.render('workouts/edit', {
+        title: 'Edit Workout',
+        workout,
+        exercises
+      })
+    } catch (error) {
+      console.log(error)
+      res.redirect('/workouts')
+    }
+  }
+
 export {
     index,
     create,
@@ -95,5 +110,6 @@ export {
     createMealLog,
     deleteMeal,
     deleteWorkout,
+    edit
     
 }
