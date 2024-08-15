@@ -6,8 +6,7 @@
 <h1><%= title  %></h1>
 <table id="list">
 <% if (user) { %>
-  <form 
-  action="/workouts" method="POST">
+  <form action="/workouts" method="POST">
       <label for="exercises-input">Exercises: </label>
       <br>
       <select name="exerciseId">
@@ -22,6 +21,19 @@
       <input type="number" name="duration" id="duration-input">
       <label for="start-date-input">Workout Date: </label>
       <input type="datetime-local" name="startDate" id="start-date-input">
+      <label for="content-textarea">Comments:</label>
+      <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
+      <label for="weather-select">Weather:</label>
+      <select name="weather" id="weather-select">
+          <option value="Sunny">Sunny</option>
+          <option value="Partly Cloudy">Partly Cloudy</option>
+          <option value="Overcast">Overcast</option>
+          <option value="Rainy">Rainy</option>
+          <option value="Snowy">Snowy</option>
+          <option value="Windy">Windy</option>
+      </select>
+      <label for="temperature-input">Temperature (°F):</label>
+      <input type= "number" name="temperature" id="temperature-input"></input>  
       <br>
       <button type="submit">Oyaa!</button>
     </form>

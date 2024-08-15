@@ -5,9 +5,11 @@ import * as workoutsCtrl from '../controllers/workouts.js'
 const router = Router()
 
 // public routes
-router.get('/', workoutsCtrl.index)
+
 
 // protected routes
+router.get('/', isSignedIn, workoutsCtrl.index)
+
 router.get('/new', isSignedIn, workoutsCtrl.new)
 
 router.post('/', isSignedIn, workoutsCtrl.create)
