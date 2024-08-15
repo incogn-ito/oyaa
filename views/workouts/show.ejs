@@ -3,31 +3,23 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <section>
     <h1><%= title  %></h1>
     <section>
+      <a href="/workouts/<%= workout._id %>/edit">
+        <button class="btn" >Edit Workout</button>
+      </a>
     <% if (user) { %>
-        <div>
-            <%= workouts.exercise._id %>
-              <a href="/workouts/<%= workout._id %>/edit">
-                  <button class="btn" >Edit Workout</button>
-              </a>
-          </div>
-          <div>Exercise:</div>
-          <div><%= workout.exercise.name %></div>
-      <form action="/workouts/<%= workout._id %>" method="POST">
-          <label for="exercises-input">Exercises: </label>
-          <select name="exerciseId">
-              <% exercises.forEach(function(exercise) { %>
-                <option value="<%= exercise._id %>"><%= exercise.name %></option>
-              <% }) %>
-            </select>
-          <!-- <label for="calories-burned-input">Calories Burned: </label>
-          <input type="text" name="caloriesBurned" id="calories-burned-input"> -->
-          <label for="duration">Duration: </label>
-          <input type="number" name="duration" placeholder="Minutes" id="duration-input">
-          <label for="start-date-input">Workout Date: </label>
-          <input type="datetime-local" name="startDate" id="start-date-input">
-          <label for="content-textarea">Comments:</label>
+      <div>Exercise:</div>
+      <div><%= workout.exercise.name %></div>
+      <div>Workout Date:</div>
+      <div><%= workout.startDate %></div>
+      <div>Duration:</div>
+      <div><%= workout.duration %></div>
+      
+      <div>Comments:</div>
+      <div><%= workout.Comments %></div>
+          <h2><label for="content-textarea">Comments:</label></h2>
           <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
           <label for="weather-select">Weather:</label>
           <select name="weather" id="weather-select">
@@ -40,11 +32,10 @@
           </select>
           <label for="temperature-input">Temperature (°F):</label>
           <input type= "number" name="temperature" id="temperature-input"></input>  
-          <br>
-          <button type="submit">Update Workout!</button>
-        </form>
+        <!-- </form> -->
     <% } %>
     </table>
-    </main>
+  </section>
+</main>
     
     <%- include("../partials/footer") %>

@@ -46,7 +46,14 @@ async function newWorkout(req, res) {
 }
 
 async function show(req, res) {
-    
+    const exercise = await Exercise.findById(req.params.exerciseId).populate('exercise')
+    const workout = await Workout.findById(req.params.workoutId)
+    console.log(exercise)
+    res.render('workouts/show', {
+        title: 'Workout Details',
+        exercise,
+        workout
+    })
 }
 
 export {

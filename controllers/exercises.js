@@ -15,7 +15,7 @@ async function newExercise(req, res) {
 
   async function create(req, res) {
     try {
-      const exercises = await Exercise.create(req.body) //performer variable isn't needed, but get in the habit for React!
+      const exercises = await Exercise.create(req.body) 
       res.redirect('/exercises/new') 
     } catch (error) {
       console.log(error)
