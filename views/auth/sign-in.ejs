@@ -1,6 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<body class="main-intro-img" style="background-image: url('../img/bw-landing-img.png')">
 <form class="auth" action="/auth/sign-in" method="POST">
   <h1>Sign in</h1>
   <label for="username">Username:</label>
@@ -9,5 +10,5 @@
   <input type="password" name="password" id="password" />
   <button type="submit">Sign in</button>
 </form>
-
+</body>
 <%- include('../partials/footer') %>

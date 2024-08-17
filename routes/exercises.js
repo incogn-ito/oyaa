@@ -11,8 +11,8 @@ const router = Router()
 // router.get('/', isSignedIn, usersCtrl.index)
 
 
-router.get('/new', exercisesCtrl.new)
+router.get('/new', isSignedIn, exercisesCtrl.new)
 
-router.post('/', exercisesCtrl.create)
+router.post('/', isSignedIn, exercisesCtrl.create)
 
 export { router }

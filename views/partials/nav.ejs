@@ -1,13 +1,14 @@
 </head>
 <body>
 <nav>
+  <i class="fa-solid fa-bolt-lightning"></i>
   <% if (user) { %>
     <a href="/workouts">Workouts</a>
     <a href="/exercises/new">Exercises</a>
-    <a href="/users">💪🏽</a>
+    <a href="/users">Users</a>
     <a href="/auth/sign-out">Log out</a>
   <% } else { %>
-    <a href="/users">💪🏽</a>
+    <a href="/">About</a>
     <a href="/auth/sign-up">Sign Up</a>
     <a href="/auth/sign-in">Sign In</a>
   <% } %>

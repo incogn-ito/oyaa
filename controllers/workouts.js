@@ -3,13 +3,14 @@ import { Exercise } from "../models/exercise.js"
 
 async function index(req, res) {
     try {
-       const workouts = await Workout.find({}).populate('exercise') 
-       console.log(workouts)
+    
+      const workouts = await Workout.find({owner: req.session.user._id}).populate('exercise') 
+      console.log(workouts)
        const exercises = await Exercise.find({})
        res.render('workouts/index', {
         title: 'All Workouts',
         workouts,
-        exercises
+        exercises,
        })
     } catch (error) {
         console.log(error)
