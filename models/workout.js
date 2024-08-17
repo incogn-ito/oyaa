@@ -14,7 +14,7 @@ const mealTrackerSchema = new Schema ({
 
 const workoutSchema = new Schema({
     exercise: {type: Schema.Types.ObjectId, ref: "Exercise"},
-    // caloriesBurned: Number,
+    caloriesBurned: Number,
     duration: Number,
     startDate: {
         type: Date,

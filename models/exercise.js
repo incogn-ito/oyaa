@@ -6,8 +6,7 @@ const exerciseSchema = new Schema ({
     name: { 
         type: String, 
         required: true 
-      },
-    caloriesBurned: Number,
+      }
     }, {
       timestamps: true
     })

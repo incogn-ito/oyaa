@@ -1,9 +1,15 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h1>Friends</h1>
-<% users.forEach(u => { %>
-  <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
-<% }) %>
+<body class="landing-img" style="background-image: url('../img/user-landing.png')">
+  <main>
+    <h1>Allies</h1>
+    <% users.forEach(u => { %>
+    <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
+    <% }) %>
+  </main>
+</body>
+
+
 
 <%- include('../partials/footer') %>
