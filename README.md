@@ -3,7 +3,7 @@
 # Oyaa  
 
 > ## Description:
-**Oyaa** is a no-nonsense, superhero-themed workout tracker app that fuses cultural heritage with a passion for comics. Born from the desire for a straightforward, no-fuss exercise and meal log, Oyaa brings together the best of both worlds. The name "Oyaa" draws inspiration from "Oya," the Yoruban goddess of lightning, change, and transformation—a symbol of power and evolution. In my culture, "Oya" also means "let's go!"—a phrase my mother always says to me, encouraging action and progress. This app is a celebration of culture, personal growth, and the spirit of getting things done. Let’s go!
+**Oyaa** is a no-nonsense, superhero-themed workout tracker app that fuses cultural heritage with a passion for comics. Born from the desire for a straightforward exercise and meal log, Oyaa brings together the best of both worlds. The name "Oyaa" draws inspiration from "Oya," the Yoruban goddess of lightning, change, and transformation—a symbol of power and evolution. In my culture, "Oya" also means "let's go!"—a phrase my mother always says to me, encouraging action and progress. This app is a celebration of culture, personal growth, and the spirit of getting things done. Let’s go!
 
 # [Click Here](https://oyaaa-050589b0fd19.herokuapp.com/auth/sign-in)
 
