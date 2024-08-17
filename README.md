@@ -32,6 +32,7 @@
 2. Add weather API for user to see current local climate 
 3. Add prompts linked to weather that alert user when to leave for a specified exercise 
 4. Allow users to send "friend requests" to other users 
+5. Add exercise calorie counter API so user can choose an exercise and determine the  calories burned based on duration of exercise
 
 
 
