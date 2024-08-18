@@ -1,11 +1,11 @@
-![Oyaa](public/img/user-landing.png)
+![Oyaa](public/img/Oyaa%20Screenshot.png)
 
 # Oyaa  
 
 > ## Overview
 **Oyaa** is a no-nonsense, superhero-themed workout tracker app that fuses cultural heritage with a passion for comics. Born from the desire for a straightforward exercise and meal log, Oyaa brings together the best of both worlds. The name "Oyaa" draws inspiration from "Oya," the Yoruban goddess of lightning, change, and transformation—a symbol of power and evolution. In my culture, "Oya" also means "let's go!"—a phrase my mother always says to me, encouraging action and progress. This app is a celebration of culture, personal growth, and the spirit of getting things done. Let’s go!
 
-# [App Here](https://oyaaa-050589b0fd19.herokuapp.com/auth/sign-in)
+# [Ckick Here For App](https://oyaaa-050589b0fd19.herokuapp.com)
 
 [Planning Documents](https://trello.com/b/FKjXRHAd/oya-board)
 

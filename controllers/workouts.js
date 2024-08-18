@@ -1,5 +1,6 @@
 import { Workout } from "../models/workout.js"
 import { Exercise } from "../models/exercise.js"
+  
 
 async function index(req, res) {
     try {
@@ -16,6 +17,26 @@ async function index(req, res) {
         console.log(error)
         res.redirect('/')
     }
+}
+
+async function home(req, res) {
+  try {
+    req.body.owner = req.session.user._id    
+    const sevenDaysAgo = new Date()
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7)
+    const workoutCountLast7Days = await Workout.countDocuments({
+      // user: __id,
+      date: { $gte: sevenDaysAgo }  // Only count workouts in the last 7 days
+    })
+    res.render('workouts/home', {
+      title: 'Welcome',
+      workoutCountLast7Days,
+      // user: req.user
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }  
 }
 
 async function create(req, res) {
@@ -124,5 +145,6 @@ export {
     deleteMeal,
     deleteWorkout,
     edit,
-    update
+    update,
+    home
 }

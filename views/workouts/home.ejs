@@ -1,16 +1,39 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
 <body class="landing-img" style="background-image: url('../img/user-landing.png')">
-    <main>
-      <section class="user-landing-container" id="user-landing">
-        <% if (user.workouts === ) { %>
-         
-        <% } %>
-        <h1>Welcome <% user.username %></h1>
-        <h2>Here are your stats!</h2>
-      </section>
-  </main>
-  </body>
+  <main>
+    <section class="user-landing-container" id="user-landing">
+      <h1><%= title %> <%= user.username %>!</h1>
+  
+      <% if (workoutCountLast7Days >= 7) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> LEGENDARY HERO <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>You've reached the top! Keep pushing for greatness.</h3>
+      <% } else if (workoutCountLast7Days === 6) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> AVENGER <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>Awesome work! Your next milestone is LEGENDARY HERO.</h3>
+      <% } else if (workoutCountLast7Days === 5) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> SUPERHERO <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>You're crushing it! You're on your way to becoming an AVENGER.</h3>
+      <% } else if (workoutCountLast7Days === 4) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> VIGILANTE <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>Great job! Your next milestone is SUPERHERO.</h3>
+      <% } else if (workoutCountLast7Days === 3) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> HERO <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>Way to go! You're on your way to becoming a VIGILANTE.</h3>
+      <% } else if (workoutCountLast7Days === 2) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> SIDE KICK <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>Amazing effort! Your next milestone is HERO.</h3>
+      <% } else if (workoutCountLast7Days === 1) { %>
+        <h2><i class="fa-solid fa-shield-halved"></i> NOVICE <i class="fa-solid fa-shield-halved"></i></h2>
+        <h3>You did it! You're on your way to becoming a SIDE KICK.</h3>
+      <% } else { %>
+        <h2>Dig deep!</h2>
+        <h3>Get more workouts in this week to become a NOVICE.</h3>
+      <% } %>
 
-<%- include('./partials/footer') %>
+    </section>
+  </main>
+</body>
+
+  <%- include('../partials/footer') %>

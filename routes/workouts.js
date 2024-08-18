@@ -10,6 +10,8 @@ const router = Router()
 // protected routes
 router.get('/', isSignedIn, workoutsCtrl.index)
 
+router.get('/home', isSignedIn, workoutsCtrl.home)
+
 router.get('/new', isSignedIn, workoutsCtrl.new)
 
 router.get('/:workoutId', isSignedIn, workoutsCtrl.show)
