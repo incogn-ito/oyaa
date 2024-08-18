@@ -65,7 +65,7 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #f6f6f6cd;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -149,7 +149,22 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
 }
+
+nav > i {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+  color:#040f64;
+}
+
+/* nav > a {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #424748;
+} */
 
 .btn {
   margin: 16px 0;
@@ -229,10 +244,27 @@ form.auth {
   height: 100vh; /* Full height of the viewport */
 }
 
-.landing-container {
+/* .landing-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #2c087a92;
+} */
+
+nav > a:visited {
+  color: #eb240a;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #368903;
+}
+
+nav > a.active {
+  color: rgb(69, 16, 214);
+}
+
+.fas::before {
+  font-family: "Font Awesome 5 Free";
 }

@@ -89,11 +89,12 @@ html {
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
-    color: #424748;
+    color: #2c087a;
+    
   }
   
-  nav > a:visited {
-    color: #000000;
+  /* nav > a:visited {
+    color: #6d0f8c;
   }
   
   nav > a:hover {
@@ -102,9 +103,22 @@ html {
   }
   
   nav > a.active {
-    color: white;
+    color: rgb(213, 62, 46);
+  } */
+  
+  nav > a:visited {
+    color: #eb240a;
   }
   
+  nav > a:hover {
+    color: white;
+    background-color: #368903;
+  }
+  
+  nav > a.active {
+    color: rgb(69, 16, 214);
+  }
+
   .fas::before {
     font-family: "Font Awesome 5 Free";
   }

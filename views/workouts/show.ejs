@@ -7,7 +7,7 @@
     <table>
     <h1><%= title  %></h1>
       <a href="/workouts/<%= workout._id %>/edit">
-        <button class="btn" >Edit Workout</button>
+        <button class="btn" ><i class="fa-solid fa-pen-to-square"></i></button>
       </a>
     <% if (user) { %>
       <h2><div>Exercise:</div></h2>
@@ -17,31 +17,8 @@
       <h3><div>Workout Date:</div></h3>
       <p><%= workout.startDate %></p>
       <% } %>
-          <!-- <h2><label for="content-textarea">Comments:</label></h2>
-          <textarea name="content" placeholder= "How was your workout?" id="content-textarea"></textarea>
-          <label for="weather-select">Weather:</label>
-          <select name="weather" id="weather-select">
-              <option value="Sunny">Sunny</option>
-              <option value="Partly Cloudy">Partly Cloudy</option>
-              <option value="Overcast">Overcast</option>
-              <option value="Rainy">Rainy</option>
-              <option value="Snowy">Snowy</option>
-              <option value="Windy">Windy</option>
-          </select>
-          <label for="temperature-input">Temperature (°F):</label>
-          <input type= "number" name="temperature" id="temperature-input"></input>   -->
-        <!-- </form> -->
         <h2>Meal Tracker:</h2>
         <form id="new-form" method="POST" action="/workouts/<%= workout._id %>/meals">
-          <!-- <h3><label for="meal-plan-select">Meal Plan:</label></h3>
-          <p><select name="mealPlan" id="meal-plan-select">
-            <option value="Intermittent Fasting">Intermittent Fasting</option>
-            <option value="One Meal A Day">One Meal A Day</option>
-            <option value="Carnivore">Carnivore</option>
-            <option value="Paleo">Paleo</option>
-            <option value="Keto">Keto</option>
-            <option value="Custom">Custom</option>
-          </select></p> -->
           <h3><label for="meal-content-textarea">Food:</label></h3>
           <textarea name="mealContent" id="meal-content-textarea"></textarea>
             <p><label for="meal-type-select">Type:</label></p>
@@ -53,7 +30,7 @@
               <option value="Snack">Snack</option>
               <option value="Drink">Drink</option>
             </select></p>
-            <button type="submit">Log Meal</button>
+            <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Log Meal</button>
         </form>
         <% if (workout.meals.length) { %>
           <table>
@@ -71,7 +48,7 @@
                   <td><%= meal.mealType %></td>
                   <td>
                     <form method="POST" action="/workouts/<%= workout._id %>/meals/<%= meal._id %>?_method=DELETE">
-                      <button>❌</button>
+                      <button><i class="fa-solid fa-delete-left"></i></button>
                     </form>
                   </td>
                 </tr>

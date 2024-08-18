@@ -1,15 +1,15 @@
 </head>
 <body>
 <nav>
-  <!-- <i class="fa-solid fa-bolt-lightning"></i> -->
+  <i class="fa-solid fa-bolt-lightning"></i>
   <% if (user) { %>
-    <a href="/home"><i class="fa-solid fa-bolt-lightning"></i></a>
+    <a href="/workouts/home"><i class="fa-solid fa-house"></i></a>
     <a href="/workouts"><i class="fa-solid fa-person-running"></i></a>
     <a href="/exercises/new"><i class="fa-solid fa-dumbbell"></i></a>
     <a href="/users"><i class="fa-solid fa-user-group"></i></a>
     <a href="/auth/sign-out"><i class="fa-solid fa-right-from-bracket"></i></a>
   <% } else { %>
-    <a href="/"><i class="fa-solid fa-bolt-lightning"></i></a>
+    <a href="/"><i class="fa-solid fa-house"></i></a>
     <a href="/auth/sign-up">Sign Up</a>
     <a href="/auth/sign-in">Sign In</a>
   <% } %>

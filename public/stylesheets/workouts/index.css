@@ -51,9 +51,12 @@ table {
   }
   
   #list a:visited{
-    color: #424748;
+    color: #eb240a;
   }
   
   #list a:hover {
-    background-color: white;
+    color: white;
+    background-color: #368903;
   }
+
+
