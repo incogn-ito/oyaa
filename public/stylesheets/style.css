@@ -245,7 +245,6 @@ form.auth {
 }
 
 .main-intro-img {
-  /* background-image: url('/public/img/bw-landing-img.png'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -273,7 +272,7 @@ nav > a.active {
 .comic-box {
   border: 4px solid #000;        /* Bold black border to resemble a comic style */
   padding: 20px;                 /* Space between the text and the border */
-  background-color: #ffffffea;        /* White background inside the box */
+  background-color: #ffffffde;        /* White background inside the box */
   width: fit-content;            /* Adjusts the width based on the content */
   margin: 20px auto;             /* Centers the box horizontally */
   text-align: center;            /* Centers the text inside the box */

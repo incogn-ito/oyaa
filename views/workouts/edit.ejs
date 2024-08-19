@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
 <%- include('../partials/nav') %>
 
-<body class="landing-img" style="background-image: url('/public/img/user-landing.png')">
+<body class="landing-img" style="background-image: url('../img/user-landing.png')">
+
 <main class="comic-box">
   <h1><%= title  %></h1>
     <table id="list">
@@ -23,7 +24,7 @@
             <label for="start-date-input">Workout Date: </label>
             <input type="datetime-local" name="startDate" id="start-date-input">
             <br>
-            <button type="submit">Save Workout</button>
+            <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Save</button>
           </form>
           <% } %>
         </table>
