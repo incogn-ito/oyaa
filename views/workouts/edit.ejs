@@ -9,22 +9,22 @@
     <table id="list">
       <% if (user) { %>
         <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
-        <label for="exercise">Exercise: </label>
+        <label>Exercise: </label>
           <p><%= workout.exercise.name %></p>
-          <label for="exercises-input">Select Exercise: </label>
+          <label>Select Exercise: </label>
           <select name="exerciseId">
             <% exercises.forEach(function(exercise) { %>
-              <option value="<%= exercise._id %>"><%= exercise.name %></option>
+            <option value="<%= exercise._id %>"><%= exercise.name %></option>
               <% }) %>
             </select>
             <br>
             <label for="calories-burned-input">Calories Burned: </label>
-            <input type="text" name="caloriesBurned" id="calories-burned-input">
+            <input type="text" value="<%= workout.caloriesBurned %>" name="caloriesBurned" id="calories-burned-input">
             <br>
-            <label for="duration">Duration: </label>
+            <label>Duration: </label>
             <input type="number" name="duration" value="<%= workout.duration %>" id="duration-input">
             <br>
-            <label for="workout-date">Workout Date: </label>
+            <label>Workout Date: </label>
           <p><%= workout.startDate %></p>
             <label for="start-date-input">Edit Workout Date: </label>
             <input type="datetime-local" name="startDate" id="start-date-input">
