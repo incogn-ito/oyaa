@@ -112,7 +112,7 @@ async function createMeal(req, res) {
 
   async function edit(req, res) {
     try {
-      const workout = await Workout.findById(req.params.workoutId)
+      const workout = await Workout.findById(req.params.workoutId).populate('exercise')
       const exercises = await Exercise.find({})    
       res.render('workouts/edit', {
         title: 'Edit Workout',
