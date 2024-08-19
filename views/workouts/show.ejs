@@ -1,13 +1,14 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/style.css" />
+<link rel="stylesheet" href="/stylesheets/workouts/index.css" />
 <%- include('../partials/nav') %>
 
+<body class="landing-img" style="background-image: url('../img/user-landing.png')">
 <main>
-  <section>
+  <section class="comic-box">
     <table>
     <h1><%= title  %></h1>
       <a href="/workouts/<%= workout._id %>/edit">
-        <button class="btn" ><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="btn" >Edit <i class="fa-solid fa-pen-to-square"></i></button>
       </a>
     <% if (user) { %>
       <h2><div>Exercise:</div></h2>
@@ -20,7 +21,7 @@
         <h2>Meal Tracker:</h2>
         <form id="new-form" method="POST" action="/workouts/<%= workout._id %>/meals">
           <h3><label for="meal-content-textarea">Food:</label></h3>
-          <textarea name="mealContent" id="meal-content-textarea"></textarea>
+          <textarea name="mealContent" placeholder="e.g. 2 Apples" id="meal-content-textarea"></textarea>
             <p><label for="meal-type-select">Type:</label></p>
             <select name="mealType" id="meal-type-select">
               <option value="Breakfast">Breakfast</option>
@@ -56,8 +57,9 @@
             </tbody>
           </table>
         <% } else { %>
-          <h3>There are no meals logged to this workout<h3>
+          <h3>There are no meals logged for this day<h3>
         <% } %>
-</main>
+    </main>  
+</body>
     
     <%- include("../partials/footer") %>

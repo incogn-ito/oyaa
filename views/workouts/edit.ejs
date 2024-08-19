@@ -1,29 +1,35 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/workouts/edit.css" />
+<link rel="stylesheet" href="/stylesheets/workouts/index.css" />
 <%- include('../partials/nav') %>
 
-<main>
-<table id="list">
-<% if (user) { %>
-  <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
-      <label for="exercises-input">Exercises: </label>
-      <br>
-      <select name="exerciseId">
-          <% exercises.forEach(function(exercise) { %>
-            <option value="<%= exercise._id %>"><%= exercise.name %></option>
-          <% }) %>
-        </select>
-        <br>
-      <label for="calories-burned-input">Calories Burned: </label>
-      <input type="text" name="caloriesBurned" id="calories-burned-input">
-      <label for="duration">Duration: </label>
-      <input type="number" name="duration" placeholder="Minutes" id="duration-input">
-      <label for="start-date-input">Workout Date: </label>
-      <input type="datetime-local" name="startDate" id="start-date-input">
-      <button type="submit">Oyaa!</button>
-    </form>
-<% } %>
-</table>
-</main>
+<body class="landing-img" style="background-image: url('../img/user-landing.png')">
+ 
+</body>
+
+<main class="comic-box">
+  <h1><%= title  %></h1>
+    <table id="list">
+      <% if (user) { %>
+        <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+          <label for="exercises-input">Exercises: </label>
+          <br>
+          <select name="exerciseId">
+            <% exercises.forEach(function(exercise) { %>
+              <option value="<%= exercise._id %>"><%= exercise.name %></option>
+              <% }) %>
+            </select>
+            <br>
+            <label for="calories-burned-input">Calories Burned: </label>
+            <input type="text" name="caloriesBurned" id="calories-burned-input">
+            <label for="duration">Duration: </label>
+            <input type="number" name="duration" placeholder="Minutes" id="duration-input">
+            <label for="start-date-input">Workout Date: </label>
+            <input type="datetime-local" name="startDate" id="start-date-input">
+            <br>
+            <button type="submit">Oyaa!</button>
+          </form>
+          <% } %>
+        </table>
+      </main>
 
 <%- include("../partials/footer") %>
