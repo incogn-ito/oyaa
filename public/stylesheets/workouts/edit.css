@@ -22,34 +22,13 @@
   }
 }
 
-
-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 352px));
-  font-size: 20px;
-}
-
-form * {
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-form > button {
-  grid-column: span 2;
-  width: 160px;
-  margin-left: auto;
-  font-size: 22px;
-}
-
 h1 {
-  color: black;
+  color:  #1b0053;
 }
 
 table {
     font-size: 20px;
-    color: black
+    color:  #1b0053;
     ;
   }
   
@@ -89,6 +68,9 @@ table {
   }
 
   a {
-    color: white;
     text-decoration: none;
+    font-family: 'Libre Franklin';
+    color: #1b0053;
   }
+
+

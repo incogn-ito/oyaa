@@ -89,6 +89,7 @@ table {
   }
 
   a {
-    color: white;
     text-decoration: none;
+    font-family: 'Libre Franklin';
+    color: #1b0053;
   }
