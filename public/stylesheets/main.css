@@ -93,19 +93,6 @@ html {
     
   }
   
-  /* nav > a:visited {
-    color: #6d0f8c;
-  }
-  
-  nav > a:hover {
-    color: white;
-    background-color: #1a4953;
-  }
-  
-  nav > a.active {
-    color: rgb(213, 62, 46);
-  } */
-  
   nav > a:visited {
     color: #eb240a;
   }

@@ -1,13 +1,16 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <%- include('../partials/nav') %>
 
 <body class="landing-img" style="background-image: url('../img/user-landing.png')">
+  <section class="comic-box">
   <main>
     <h1>Allies</h1>
     <% users.forEach(u => { %>
-    <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
+      <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
     <% }) %>
   </main>
+</section>
 </body>
 
 

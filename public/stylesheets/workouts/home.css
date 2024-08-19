@@ -22,22 +22,56 @@
     }
   }
   
-  form {
-      display: grid;
-      grid-gap: 10px;
-      grid-template-columns: repeat(2, minmax(auto, 352px));
+  h1 {
+    color: #1b0053;
+  }
+  
+  table {
       font-size: 20px;
+      color: black
+      ;
     }
     
-    form * {
+    table thead th {
       padding: 5px;
-      border-radius: 5px;
-      font-size: 20px;
+      border-bottom: 2px solid #424748;
     }
     
-    form > button {
-      grid-column: span 2;
-      width: 160px;
-      margin-left: auto;
-      font-size: 22px;
+    table td {
+      padding: 10px;
+      text-align: center;
+      font-family: 'Libre Franklin';
+  
     }
+    
+    #list td:nth-child(2),
+    #list td:nth-child(3) {
+      min-width: 100px;
+    }
+    
+    #list a {
+      border-radius: 4px;
+      background-color: #3d0d84;
+      padding: 4px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #ffffff;
+    }
+    
+    #list a:visited{
+      color: #eb240a;
+    }
+    
+    #list a:hover {
+      color: white;
+      background-color: #368903;
+    }
+  
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  
+   
+  
+  
